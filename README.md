@@ -1,119 +1,71 @@
 # Pathfinder: Career Interest Survey
 
-✨ Overview of the Project
+✨ Overview
 
-This Career Interest Survey Platform serves as a vital tool for students, job seekers, and career changers. It moves beyond simple quizzes by employing a validated scoring methodology (e.g., based on the Holland Codes, or a similar framework) to provide personalized, data-driven career recommendations. The goal is to bridge the gap between user self-perception and suitable professional fields, ultimately leading to more informed and satisfying career decisions. The system generates a comprehensive report highlighting suggested career clusters and corresponding job roles.
+This is a simple Python console application designed to help users identify potential career domains that align with their interests. The program guides the user through a short questionnaire, calculates scores across different career domains (STEM, Arts, Social, Business, Tech), and provides a suggested career path based on their highest-scoring domain.
 
 ✨ Features
 
-The platform offers a robust set of features to ensure a comprehensive and user-friendly experience:
-Customizable Survey: A multi-section questionnaire covering interests, skills, work values, and personality aspects.
-Intelligent Scoring Engine: Utilizes an algorithm to process survey responses and map them against established career models.
-Personalized Career Report: Generates a detailed, printable report that includes:
+User Introduction: Gathers the user's name and grade/class.
+Interactive Questionnaire: Presents a set of interest-based statements for the user to rate on a scale of 1 to 5.
+Domain Scoring: Calculates a score for five distinct career domains: STEM, ARTS, SOCIAL, BUSINESS, and TECH.
+Personalized Recommendation: Identifies the user's strongest domain and suggests a list of relevant career paths within that area.
+Modular Design: The project is organized into separate Python modules for clear structure and maintainability (main.py, module_intro.py, module_questions.py, module_scorer.py, module_recommender.py).
 
-Top 3 recommended Career Clusters (e.g., Realistic, Investigative, Artistic, Social, Enterprising, Conventional).
-Specific Job Titles within those clusters.
-A Summary of the user's key strengths and work environment preferences.
-User Authentication (Optional): Allows users to save their progress and access past reports.
-Report History: Users can view and compare previous survey results (if authentication is implemented).
-Responsive Design: Ensures a seamless experience across desktop, tablet, and mobile devices.
+✨ Technologies/Tools Used
 
-✨ Technologies & Tools Used
+Python 3: The core programming language used for the application logic.
 
-This project leverages the following technologies:
+--> Steps to Install & Run the Project
 
-  Frontend
-  HTML5/CSS3: For structuring and styling the web application.
-  JavaScript (ES6+): For interactive elements and front-end logic.
-  React (or Vue.js/Angular): For building a modular and efficient user interface.
-  Tailwind CSS (or Bootstrap): For rapid and responsive UI development.
-
-  Backend
-  Node.js & Express.js (or Python & Django/Flask): For the server-side logic and API development.
-  RESTful API: For managing data exchange between the frontend and the database.
-
-  Database
-  MongoDB (or PostgreSQL/MySQL): A NoSQL/Relational database for storing user data, survey questions, and career profile data.
-
-  Deployment/Other
-  Git/GitHub: For version control and collaborative development.
-
-  VS Code (or equivalent IDE): Development environment.
-
-✨  Steps to Install & Run the Project
-
-
-Follow these instructions to set up the project on your local machine.
-  Prerequisites
-  You must have the following installed:
-  Node.js (version 16 or higher)
-  npm or Yarn
-  MongoDB running locally or a connection string for a hosted instance.
-
+Prerequisites
+You need to have Python 3 installed on your system.
 
 --> Installation
 
-1.Clone the Repository:
+1.Clone the Repository (or download the files):
+Bash
+git clone [YOUR_REPOSITORY_URL]
+cd [YOUR_REPOSITORY_DIRECTORY]
 
-  Bash
-  git clone [YOUR_REPOSITORY_URL]
-  cd career-interest-survey
+2.Ensure all project files are in the same directory:
+main.py
+module_intro.py
+module_questions.py
+module_scorer.py
+module_recommender.py
 
-2.Install Dependencies for Frontend & Backend:
+--> Running the Application
 
-  --> Backend Setup:
-  Bash
-  cd server # or backend
-  npm install
-  
-  --> Frontend Setup:
-  Bash
-  cd ../client # or frontend
-  npm install
+1.Open your terminal or command prompt.
 
-3.Configure Environment Variables:
+2.Navigate to the directory where you saved the files.
 
-  In the server directory, create a file named .env and add your configuration details.
-  Example .env file:
-  PORT=5000
-  DATABASE_URL=mongodb://localhost:27017/career_survey_db
-  Add any other required keys (e.g., JWT_SECRET for authentication)
+3.Execute the main script:
 
-4.Running the Application
-  
-  --> Start the Backend Server:
-  Bash
-  cd server
-  npm start
-  The server will run on http://localhost:5000
-  
-  --> Start the Frontend Application:
-  Bash
-  cd ../client
-  npm start
-  The application will open in your browser at http://localhost:3000
-The application is now running and ready for use!
+Bash
+
+python main.py
+
+Follow the on-screen prompts to enter your name, grade, and complete the survey.
 
 ✨ Instructions for Testing
 
-We use Jest for unit testing and Cypress (or Puppeteer) for end-to-end (E2E) testing.
+To test the application's core logic, you can focus on how different response inputs affect the final scores and recommendations.
 
-1.Unit Testing
-  To run tests on the core logic (e.g., the scoring algorithm, API endpoints, utility functions):
-  Navigate to the relevant directory (server or client).
-  Execute the test command:
-  Bash
-  npm test
-All tests must pass for the application to be considered stable.
+1. Test Input Handling
+   
+Verify that the question module correctly handles valid and invalid inputs:
+Valid Input: Enter numbers between 1 and 5 (e.g., 3, 5, 1). The program should accept them.
+Invalid Input (Range): Enter numbers outside the 1-5 range (e.g., 0, 6). The program should prompt you with "Please enter a number between 1 and 5."
+Invalid Input (Type): Enter non-numeric characters (e.g., abc). The program should prompt you with "Invalid input. Please enter a number."
 
-2.End-to-End (E2E) Testing
-  To simulate a complete user flow (e.g., filling out the survey and viewing the report):
-  Ensure both the frontend and backend servers are running (Steps 1 & 2 in "Running the Application").
-  Navigate to the frontend directory:
-  Bash
-  cd client
-  
-3.Open the Cypress test runner:
-  Bash
-  npx cypress open
-  Select the survey_flow.spec.js file (or equivalent) to run the full user journey test.
+2. Test Scoring Logic
+   
+The scoring system simply sums up the rating (1-5) for each question that belongs to a specific domain.
+To Test for a STEM Recommendation: When running the survey, give a high score (e.g., 5) to the STEM-related question:
+"I enjoy solving mathematical or logical problems."
+Give low scores (e.g., 1 or 2) to all other questions. The final result should identify STEM as your strongest domain.
+To Test for an ARTS Recommendation: Give a high score (e.g., 5) to the ARTS-related question:
+"I like creating art, music, or writing stories."
+Give low scores to all other questions. The final result should identify ARTS as your strongest domain and suggest careers like "Graphic Designer" or "Musician"
