@@ -1,7 +1,5 @@
 def show_intro():
-    print("========================================")
-    print("          CAREER INTEREST SURVEY")
-    print("========================================")
+
     print("This survey will help you understand which career")
     print("domains match your interests.")
     print()
@@ -13,3 +11,4 @@ def show_intro():
     print("Let's begin the survey...\n")
 
     return name, grade
+
