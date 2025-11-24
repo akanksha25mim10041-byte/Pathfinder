@@ -1,10 +1,10 @@
 # Pathfinder: Career Interest Survey
 
-✨ Overview
+# Overview
 
 This is a simple Python console application designed to help users identify potential career domains that align with their interests. The program guides the user through a short questionnaire, calculates scores across different career domains (STEM, Arts, Social, Business, Tech), and provides a suggested career path based on their highest-scoring domain.
 
-✨ Features
+# Features
 
 User Introduction: Gathers the user's name and grade/class.
 Interactive Questionnaire: Presents a set of interest-based statements for the user to rate on a scale of 1 to 5.
@@ -12,7 +12,7 @@ Domain Scoring: Calculates a score for five distinct career domains: STEM, ARTS,
 Personalized Recommendation: Identifies the user's strongest domain and suggests a list of relevant career paths within that area.
 Modular Design: The project is organized into separate Python modules for clear structure and maintainability (main.py, module_intro.py, module_questions.py, module_scorer.py, module_recommender.py).
 
-✨ Technologies/Tools Used
+# Technologies/Tools Used
 
 Python 3: The core programming language used for the application logic.
 
@@ -49,7 +49,7 @@ python main.py
 
 Follow the on-screen prompts to enter your name, grade, and complete the survey.
 
-✨ Instructions for Testing
+# Instructions for Testing
 
 To test the application's core logic, you can focus on how different response inputs affect the final scores and recommendations.
 
