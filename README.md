@@ -21,7 +21,7 @@ Python 3: The core programming language used for the application logic.
 Prerequisites
 You need to have Python 3 installed on your system.
 
---> Installation
+# Steps to install & run the project
 
 1.Clone the Repository (or download the files):
 Bash
