@@ -9,9 +9,6 @@ def recommend_career(scores, name):
         "TECH": ["Technician", "Mechanic", "Electrician"]
     }
 
-    print("\n========================================")
-    print("               RESULTS")
-    print("========================================")
     print(f"Career Report for: {name}")
     print("\nYour Domain Scores:")
     for domain in scores:
@@ -21,3 +18,4 @@ def recommend_career(scores, name):
     print("\nSuggested Careers:")
     for career in career_paths[highest]:
         print(" -", career)
+
